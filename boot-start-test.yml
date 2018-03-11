@@ -1,0 +1,33 @@
+test: test_env
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8765
+
+  
+spring:
+  thymeleaf:
+    cache: false 
+    mode: HTML5  
+    encoding: UTF-8
+    content-type: text/html  
+    prefix: classpath:/templates/
+    suffix: .html 
+  datasource:
+    name: test
+    url: jdbc:mysql://localhost:3306/test
+    username: sky_
+    password: sky5274
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapper-locations: com/example/demo/mapper/*.xml
+  type-aliases-package: com.example.demo.dao
+
+logging:
+    config: classpath:logback.xml
+    file: /logs/log_spring.log
